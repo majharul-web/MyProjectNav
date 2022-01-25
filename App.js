@@ -8,14 +8,16 @@ import Profile from './src/Screen/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Order from './src/Screen/Order';
 import Cart from './src/Screen/Cart';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const userInfo = {
   userId: '01',
   userName: 'Md Majharul Islam',
-  userImg: 'https://drive.google.com/file/d/169YqO_c6GY9eBmaGVnlW7TcC4a_4vBeY/view?usp=sharing'
+  userImg: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg?size=626&ext=jpg'
 }
 
 const Tab = createBottomTabNavigator();
+const Stack=createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>

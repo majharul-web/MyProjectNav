@@ -5,6 +5,7 @@ import { FlatGrid } from 'react-native-super-grid';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { FlatList, Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Food from '../Pages/Food';
+import GlobalStyle from '../utils/GlobalStyle';
 
 
 const Home = () => {
@@ -41,9 +42,9 @@ const Home = () => {
 
 
             <View style={{ flex: 3 }}>
-                <Text style={{ textAlign: 'center', color: '#e91e63', fontSize: 20, paddingVertical: 10 }}>Our Foods</Text>
+                <Text style={[GlobalStyle.CustomFont,{ textAlign: 'center', color: '#e91e63', fontSize: 20, paddingVertical: 10 }]}>Our Foods</Text>
                 <View style={{ flex: 1 }}>
-                    <FlatGrid
+                    {/* <FlatGrid
                         keyExtractor={item => item.idCategory}
                         data={meals}
                         style={{ flex: 1 }}
@@ -51,7 +52,7 @@ const Home = () => {
                         renderItem={({ item }) => (
                             <Food item={item}></Food>
                         )}
-                    />
+                    /> */}
                 </View>
             </View>
 

@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
+import GlobalStyle from '../utils/GlobalStyle';
+
 
 const Profile = ({ navigation, route }) => {
     // console.log(route.params);
@@ -15,15 +17,15 @@ const Profile = ({ navigation, route }) => {
 
                 // source={require('../../images/banner.jpg')}
 
-                source={{
-                    uri: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg?size=626&ext=jpg',
-                }}
+                // source={{
+                //     uri: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg?size=626&ext=jpg',
+                // }}
 
-            // source={{
-            //     uri: userImg,
-            // }}
+            source={{
+                uri: userImg,
+            }}
             />
-            <Text style={{ color: 'black', fontSize: 20 }}>{userName}</Text>
+            <Text style={[GlobalStyle.CustomFont,{ color: 'black', fontSize: 20, }]}>{userName}</Text>
         </View>
     );
 };
