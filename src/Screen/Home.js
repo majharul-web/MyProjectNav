@@ -9,12 +9,17 @@ import Food from '../Pages/Food';
 
 const Home = () => {
 
-    const [isTrue, setIsTrue] = useState(false);
     const [meals, setMeals] = useState([]);
+    // console.log(meals);
+
     useEffect(() => {
         fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
             .then(res => res.json())
-            .then(data => setMeals(data.categories));
+            .then(data => setMeals(setMeals(data.categories)))
+            .catch((error) => {
+                console.log("Api call error");
+                alert(error.message);
+            });
     }, []);
     return (
         <View style={{ flex: 1 }}>
@@ -27,10 +32,10 @@ const Home = () => {
                 style={{ flex: 1 }}
             >
 
-                <Pressable style={{ marginLeft: 10, marginTop: 5, fontWeight: '700' }}>
+                {/* <Pressable style={{ marginLeft: 10, marginTop: 5, fontWeight: '700' }}>
                     <MaterialCommunityIcons name="reorder-horizontal" color={'red'} size={30} />
-                </Pressable>
-                {/* <Text style={{ color: '#e91e63', fontSize: 35, textAlign: 'center' }}>MS Restaurants</Text> */}
+                </Pressable> */}
+                <Text style={{ color: '#e91e63', fontSize: 35, textAlign: 'center' }}>MS Restaurants</Text>
             </ImageBackground >
 
 

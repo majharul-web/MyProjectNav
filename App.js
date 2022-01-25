@@ -9,7 +9,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Order from './src/Screen/Order';
 import Cart from './src/Screen/Cart';
 
-
+const userInfo = {
+  userId: '01',
+  userName: 'Md Majharul Islam',
+  userImg: 'https://drive.google.com/file/d/169YqO_c6GY9eBmaGVnlW7TcC4a_4vBeY/view?usp=sharing'
+}
 
 const Tab = createBottomTabNavigator();
 const App = () => {
@@ -38,6 +42,7 @@ const App = () => {
               <MaterialCommunityIcons name="account" color={color} size={size} />
             ),
           }}
+          initialParams={userInfo}
         />
         <Tab.Screen name="Order" component={Order}
           options={{
